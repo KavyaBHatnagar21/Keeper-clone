@@ -4,7 +4,7 @@ const Card = require('../models/cardsModel')
 
 router.get('/', async (req, res) => {
     try {
-        const cards = await Card.find()
+        const cards = await Card.find().sort({ 'updatedAt': -1 })
         res.json(cards)
     } catch (err) {
         res.json({ message: err })

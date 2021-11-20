@@ -6,7 +6,14 @@ const cardSchema = mongoose.Schema({
         required: true,
         trim: true
     },
-    description: String,
-})
+    description: {
+        type: String,
+        trim: true
+    },
+},
+    {
+        timestamps: true
+    }
+)
 
 module.exports = mongoose.model('Cards', cardSchema)
